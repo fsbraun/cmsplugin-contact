@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Contact',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('form_name', models.CharField(help_text='Used to distinguish multiple contact forms on the same site.', max_length=60, verbose_name='Form name', blank=True)),
                 ('form_layout', models.CharField(help_text='Choice the layout of contact form', max_length=255, verbose_name='Form Layout', choices=[(b'cmsplugin_contact.forms.ContactForm', b'Default')])),
                 ('site_email', models.EmailField(max_length=75, verbose_name='Email recipient')),
